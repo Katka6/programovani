@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "kvadraticka rovnice/1.0.0": {
+        "runtime": {
+          "kvadraticka rovnice.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "kvadraticka rovnice/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
