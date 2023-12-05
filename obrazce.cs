@@ -3,7 +3,7 @@
 string KONEC = "N";
 
 
-string[] tvary = new string[] { "ctverec", "obdelnik", "trojuhelnik", "kruh", "krychle", "kvadr", "koule" };
+string[] tvary = new string[] { "ctverec", "obdelnik", "trojuhelnik", "kruh", "krychle", "kvadr", "koule", "kužel"};
 int GetSelection(string[] options)
 {
 
@@ -20,7 +20,6 @@ int GetSelection(string[] options)
     }
     return vyberL;
 }
-
 
 
 
@@ -48,18 +47,18 @@ double Nacticislo()
 
     void ctverec()
     {
-        Console.WriteLine("vybral jsi čtverec.");
+        Console.WriteLine("Vybral jsi čtverec.");
         Console.WriteLine("Napiš délku strany a : ");
         double a = Nacticislo();
-        Console.WriteLine($"Obvod čtverce je {a * 4} cm");
-        Console.WriteLine($"Obsah čtverce je {a * a} cm^2");
+        Console.WriteLine($"Obvod čtverce je {Math.Round((a * 4), 2)} cm");
+        Console.WriteLine($"Obsah čtverce je {Math.Round((a * a), 2)} cm^2");
 
     }
 
 
     void obdelnik()
     {
-        Console.WriteLine("vybral jsi obdélník.");
+        Console.WriteLine("Vybral jsi obdélník.");
         Console.WriteLine("Napiš délku strany a : ");
         double a = Nacticislo();
         Console.WriteLine("Napiš délku strany b : ");
@@ -67,13 +66,13 @@ double Nacticislo()
         if (a == b)
         {
             Console.WriteLine("Tohle je čtverec");
-            Console.WriteLine($"Obvod čtverce je {a * 4} cm");
-            Console.WriteLine($"Obsah čtverce je {a * a} cm^2");
+            Console.WriteLine($"Obvod čtverce je {Math.Round((a * 4), 2)} cm");
+            Console.WriteLine($"Obsah čtverce je {Math.Round((a * a), 2)} cm^2");
         }
         else
         {
-            Console.WriteLine($"Obvod obdélníku je {(a + b) * 2} cm");
-            Console.WriteLine($"Obsah obdélníku je {a * b} cm^2");
+            Console.WriteLine($"Obvod obdélníku je {Math.Round(((a + b) * 2), 2)} cm");
+            Console.WriteLine($"Obsah obdélníku je {Math.Round((a * b), 2)} cm^2");
         }
 
 
@@ -83,7 +82,7 @@ double Nacticislo()
 
     void trojuhelnik()
     {
-        Console.WriteLine("vybral jsi trojúhelník");
+        Console.WriteLine("Vybral jsi trojúhelník.");
         Console.WriteLine("Napiš délku strany a : ");
         double a = Nacticislo();
         Console.WriteLine("Napiš délku strany b : ");
@@ -105,42 +104,42 @@ double Nacticislo()
 
     void kruh()
     {
-        Console.WriteLine("vybral jsi kruh");
+        Console.WriteLine("Vybral jsi kruh.");
         Console.WriteLine("Napiš poloměr kruhu : ");
         double r = Nacticislo();
-        Console.WriteLine($"Obvod kruhu je {2 * Math.PI * r}");
-        Console.WriteLine($"Obsah kruhu je {Math.PI * r * r}");
+        Console.WriteLine($"Obvod kruhu je {Math.Round((2 * Math.PI * r), 2)}");
+        Console.WriteLine($"Obsah kruhu je {Math.Round((Math.PI * r * r), 2)}");
     }
 
     void krychle()
     {
-        Console.WriteLine("vybral jsi krychli");
+        Console.WriteLine("Vybral jsi krychli.");
         Console.WriteLine("Napiš stranu a :");
         double a = Nacticislo();
-        Console.WriteLine($"Povrch krychle je {a * 6} cm^2");
-        Console.WriteLine($"Objem krychle je {a * a * a} cm^3");
+        Console.WriteLine($"Povrch krychle je {Math.Round((a * 6), 2)} cm^2");
+        Console.WriteLine($"Objem krychle je {Math.Round((a * a * a), 2)} cm^3");
 
     }
 
     void kvadr()
     {
-        Console.WriteLine("vybral jsi kvádr.");
-        Console.WriteLine("Napiš délku strany a : ");
+        Console.WriteLine("Vybral jsi kvádr.");
+        Console.WriteLine("Napiš délku strany a: ");
         double a = Nacticislo();
-        Console.WriteLine("Napiš délku strany b : ");
+        Console.WriteLine("Napiš délku strany b: ");
         double b = Nacticislo();
-        Console.WriteLine("Napiš délku strany c : ");
+        Console.WriteLine("Napiš délku strany c: ");
         double c = Nacticislo();
         if ((a == b) && (a == c) && (b == c))
         {
             Console.WriteLine("Tohle je krychle");
-            Console.WriteLine($"Obvod krychle je {a * 6} cm^2");
-            Console.WriteLine($"Obsah krychle je {a * a * a} cm^3");
+            Console.WriteLine($"Obvod krychle je {Math.Round((a * 6), 2)} cm^2");
+            Console.WriteLine($"Obsah krychle je {Math.Round((a * a * a), 2)} cm^3");
         }
         else
         {
-            Console.WriteLine($"Povrch kvádru je {(a * b) * (a * c) * (b * c)} cm^2");
-            Console.WriteLine($"Objem kvádru je {a * b * c} cm^3");
+            Console.WriteLine($"Povrch kvádru je {Math.Round(((a * b) * (a * c) * (b * c)),2)} cm^2");
+            Console.WriteLine($"Objem kvádru je {Math.Round((a * b * c), 2)} cm^3");
         }
 
 
@@ -150,22 +149,22 @@ double Nacticislo()
 
     void koule()
     {
-        Console.WriteLine("vybral jsi koule");
-        Console.WriteLine("Napiš poloměr koule : ");
+        Console.WriteLine("Vybral jsi koule.");
+        Console.WriteLine("Napiš poloměr koule: ");
         double r = Nacticislo();
-        Console.WriteLine($"Povrch koule je {4 * r * r * Math.PI}");
-        Console.WriteLine($"Objem koule je {Math.PI * r * r * r * (4 / 3)}");
+        Console.WriteLine($"Povrch koule je {Math.Round((4 * r * r * Math.PI),2)}");
+        Console.WriteLine($"Objem koule je {Math.Round((Math.PI * r * r * r * (4f / 3f)),2)}");
     }
 
     void kuzel()
     {
-        Console.WriteLine("vybral jsi kužel");
-        Console.WriteLine("Napiš poloměr podstavy kuželu : ");
+        Console.WriteLine("Vybral jsi kužel.");
+        Console.WriteLine("Napiš poloměr podstavy kuželu: ");
         double r = Nacticislo();
         Console.WriteLine("Napiš výšku kuželu : ");
         double v = Nacticislo();
-        Console.WriteLine($"Povrch koule je {Math.PI * r * (r + Math.Sqrt((r * r) + (v * v)))}");
-        Console.WriteLine($"Objem koule je {Math.PI * r * r * v * (1 / 3)}");
+        Console.WriteLine($"Povrch koule je {Math.Round((Math.PI * r * (r + Math.Sqrt((r * r) + (v * v)))),2)}");
+        Console.WriteLine($"Objem koule je {Math.Round((Math.PI * r * r * v * (1f / 3f)), 2)}"); 
     }
 do
 { 
@@ -197,7 +196,7 @@ do
             break;
         case 7:
             kuzel();
-        break;
+            break;
     };
     Console.WriteLine("Pro ukončení programu napiš A.");
     KONEC = Console.ReadLine();
